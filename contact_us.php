@@ -5,10 +5,18 @@
 
 <?php
 
+//ini_set('SMTP', "server.com");
+//ini_set('smtp_port', "25");
+//ini_set('sendmail_from', "email@domain.com");
+
     if(isset($_POST['submit'])) {
         $to = "saminyeaser1@gmail.com";
         $subject = $_POST['subject'];
-        $body = $_POST['body'];
+        $body = wordwrap($_POST['body'], 60);
+        $header = $_POST['email'];
+        ini_set(mail($to, $subject, $body));
+
+        //This function will not work now as i have not installed any types of smtp server for mail.
 
     }
 
@@ -28,7 +36,7 @@
             <div class="col-xs-6 col-xs-offset-3">
                 <div class="form-wrap">
                 <h1>Contact Us</h1>
-                    <form role="form" action="registration.php" method="post" id="login-form" autocomplete="off">
+                    <form role="form" action="" method="post" id="login-form" autocomplete="off">
 
                         <div class="form-group">
                             <label for="email" class="sr-only">Email</label>
@@ -36,7 +44,7 @@
                         </div>
                          <div class="form-group">
                             <label for="subject" class="sr-only">Subject</label>
-                            <input type="email" name="subject" id="subject" class="form-control" placeholder="Your subject">
+                            <input type="subject" name="subject" id="subject" class="form-control" placeholder="Your subject">
                         </div>
                          <div class="form-group">
 
