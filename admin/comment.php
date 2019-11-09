@@ -1,3 +1,25 @@
+<?php ob_start();?>
+<?php include 'includess/header.php';?>
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <?php include 'includess/navigation.php';?>
+
+    <div id="page-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12 col-xs-12">
+
+                    <h1 class="page-header">
+                        Welcome to Comments
+                        <small>Author</small>
+                    </h1>
+
+
 <table class="table table-bordered table-hover">
     <thead>
     <tr>
@@ -8,8 +30,8 @@
         <th>Status</th>
         <th>In Response To</th>
         <th>Date</th>
-        <th>Approved</th>
-        <th>Unapproved</th>
+        <th>Approve</th>
+        <th>Unapprove</th>
         <th>Delete</th>
 
     </tr>
@@ -18,7 +40,7 @@
 
     <?php
 
-    $query = "SELECT * FROM comments WHERE comment_post_id =". mysqli_real_escape_string($_GET['id'])."";
+    $query = "SELECT * FROM comments WHERE comment_post_id =". mysqli_real_escape_string($connection,$_GET['id'])." ";
     $select_comments = mysqli_query($connection,$query);
 
     while($row = mysqli_fetch_assoc($select_comments)){
@@ -114,3 +136,15 @@ if(isset($_GET['delete'])){
 }
 
 ?>
+
+</div>
+</div>
+<!-- /.row -->
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+<?php include 'includess/footer.php';?>

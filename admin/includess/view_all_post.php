@@ -120,6 +120,8 @@
 
 
         echo "<td><a href='comment.php?id=$post_id'>$comment_count</a></td>";
+
+
         echo "<td>$post_date</td>";
         echo "<td><a href='../post.php?p_id={$post_id}'>View Post</a></td>";
         echo "<td><a href='posts.php?source=edit_post&p_id={$post_id}'>Edit</a></td>";
