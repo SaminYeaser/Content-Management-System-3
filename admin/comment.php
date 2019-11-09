@@ -86,7 +86,7 @@
 
 
         echo "<td>$comment_date</td>";
-        echo "<td><a href='comments.php?approve={$comment_id}'>Approve</a></td>";
+        echo "<td><a href='comment.php?approve=$comment_id&id=".$_GET['id']."'>Approve</a></td>";
         echo "<td><a href='comments.php?unapprove={$comment_id}'>Unapprove</a></td>";
         echo "<td><a href='comment.php?delete=$comment_id&id=".$_GET['id']."'>Delete</a></td>";
         echo "</tr>";
@@ -117,7 +117,7 @@ if(isset($_GET['approve'])){
     $the_comment_id = $_GET['approve'];
     $query = "UPDATE comments SET comment_status = 'approve' WHERE comment_id = $the_comment_id";
     $approve_comment = mysqli_query($connection, $query);
-    header("Location: comments.php");
+    header("Location: comment.php?id=".$_GET['id']."");
 }
 
 ?>
