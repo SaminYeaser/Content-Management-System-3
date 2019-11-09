@@ -6,9 +6,9 @@
 <?php
 
     if(isset($_POST['submit'])) {
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+        $to = "saminyeaser1@gmail.com";
+        $subject = $_POST['subject'];
+        $body = $_POST['body'];
 
     }
 

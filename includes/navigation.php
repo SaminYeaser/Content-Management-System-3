@@ -33,6 +33,10 @@
                 <li>
                     <a href="http://localhost/cms3/registration.php">Registration</a>
                 </li>
+
+                <li>
+                    <a href="http://localhost/cms3/contact_us.php">Contact Us</a>
+                </li>
                 <?php
 
                 if (isset($_GET['p_id'])) {
