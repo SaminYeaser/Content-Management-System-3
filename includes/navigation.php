@@ -32,7 +32,7 @@
                         }else if ($pagename == $regiestration){
                             $regiestration_class = 'active';
                         }
-
+//Activation of the link pages
                         echo "<li class='$category_class'><a href='#'> {$cat_title}</a></li>";
                     }
                 ?>
