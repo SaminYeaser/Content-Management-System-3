@@ -33,7 +33,7 @@
                             $regiestration_class = 'active';
                         }
 
-                        echo "<li><a href='#'> {$cat_title}</a></li>";
+                        echo "<li class='$category_class'><a href='#'> {$cat_title}</a></li>";
                     }
                 ?>
 
@@ -41,7 +41,7 @@
                     <a href="admin">Admin</a>
                 </li>
 
-                <li>
+                <li class="<?php echo $regiestration_class?>">
                     <a href="http://localhost/cms3/registration.php">Registration</a>
                 </li>
 
