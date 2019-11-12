@@ -33,7 +33,7 @@
                             $regiestration_class = 'active';
                         }
 //Activation of the link pages
-                        echo "<li class='$category_class'><a href='#'> {$cat_title}</a></li>";
+                        echo "<li class='$category_class'><a href='category.php?category={$cat_id}'>{$cat_title}</a></li>";
                     }
                 ?>
 
