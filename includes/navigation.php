@@ -22,6 +22,8 @@
 
                         $cat_title = $row['cat_title'];
 
+                        basename($_SERVER['php_self']);
+
                         echo "<li><a href='#'> {$cat_title}</a></li>";
                     }
                 ?>
