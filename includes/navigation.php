@@ -22,6 +22,9 @@
 
                         $cat_title = $row['cat_title'];
 
+                        $category_class = '';
+                        $regiestration_class = '';
+
                         basename($_SERVER['php_self']);
 
                         echo "<li><a href='#'> {$cat_title}</a></li>";
