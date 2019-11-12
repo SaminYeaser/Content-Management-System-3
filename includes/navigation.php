@@ -21,11 +21,17 @@
                     while ($row = mysqli_fetch_assoc($select_all_from_catagories)){
 
                         $cat_title = $row['cat_title'];
+                        $cat_id = $row['cat_id'];
+                        $category_class = '';
+                        $regiestration_class = '';
+                        $regiestration = 'registration.php';
+                        $pagename = basename($_SERVER['PHP_SELF']);
 
-//                        $category_class = '';
-//                        $regiestration_class = '';
-//
-//                        basename($_SERVER['php_self']);
+                        if(isset($_GET['category']) && $_GET['category']==$cat_id){
+                            $category_class = 'active';
+                        }else if ($pagename == $regiestration){
+                            $regiestration_class = 'active';
+                        }
 
                         echo "<li><a href='#'> {$cat_title}</a></li>";
                     }
