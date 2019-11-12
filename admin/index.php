@@ -3,13 +3,6 @@
     <div id="wrapper">
 
 
-    <?php
-
-   users_online();
-?>
-
-
-
         <!-- Navigation -->
         <?php include 'includess/navigation.php'?>
 
