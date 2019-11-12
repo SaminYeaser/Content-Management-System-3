@@ -16,16 +16,16 @@
 
                 <?php
 
-                    $query = 'SELECT * FROM catagories';
+                    $query = 'SELECT * FROM catagories LIMIT 3';
                     $select_all_from_catagories =mysqli_query($connection, $query) ;
                     while ($row = mysqli_fetch_assoc($select_all_from_catagories)){
 
                         $cat_title = $row['cat_title'];
 
-                        $category_class = '';
-                        $regiestration_class = '';
-
-                        basename($_SERVER['php_self']);
+//                        $category_class = '';
+//                        $regiestration_class = '';
+//
+//                        basename($_SERVER['php_self']);
 
                         echo "<li><a href='#'> {$cat_title}</a></li>";
                     }
