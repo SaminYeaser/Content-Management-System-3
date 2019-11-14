@@ -51,7 +51,7 @@
                 </li>
 
                 <li>
-                    <a href="http://localhost/cms3/contact_us.php">Contact Us</a>
+                    <a class="<?php echo ;?>" href="http://localhost/cms3/contact_us.php">Contact Us</a>
                 </li>
                 <?php
 
