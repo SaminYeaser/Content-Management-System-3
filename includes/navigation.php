@@ -34,7 +34,7 @@
                         }else if ($pagename == $regiestration){
                             $regiestration_class = 'active';
                         }else if ($pagename == $contact_us){
-
+                            $contact_us_class = 'active';
                         }
 //Activation of the link pages
                         echo "<li class='$category_class'><a href='category.php?category={$cat_id}'>{$cat_title}</a></li>";
