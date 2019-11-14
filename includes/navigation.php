@@ -49,7 +49,7 @@
                 <li class="<?php echo $regiestration_class?>">
                     <a href="http://localhost/cms3/registration.php">Registration</a>
                 </li>
-
+<!--All are fixed hahahhaha-->
                 <li class="<?php echo $contact_us_class;?>">
                     <a href="http://localhost/cms3/contact_us.php">Contact Us</a>
                 </li>
