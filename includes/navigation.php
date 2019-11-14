@@ -26,7 +26,7 @@
                         $regiestration_class = '';
                         $regiestration = 'registration.php';
                         $contact_us_class = '';
-                        $contact_us = 'contact_us';
+                        $contact_us = 'contact_us.php';
                         $pagename = basename($_SERVER['PHP_SELF']);
 
                         if(isset($_GET['category']) && $_GET['category']==$cat_id){
@@ -50,8 +50,8 @@
                     <a href="http://localhost/cms3/registration.php">Registration</a>
                 </li>
 
-                <li>
-                    <a class="<?php echo $contact_us_class;?>" href="http://localhost/cms3/contact_us.php">Contact Us</a>
+                <li class="<?php echo $contact_us_class;?>">
+                    <a href="http://localhost/cms3/contact_us.php">Contact Us</a>
                 </li>
                 <?php
 
