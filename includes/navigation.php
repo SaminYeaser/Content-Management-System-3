@@ -25,14 +25,17 @@
                         $category_class = '';
                         $regiestration_class = '';
                         $regiestration = 'registration.php';
-                        $contact_us = '';
+                        $contact_us_class = 'active';
+                        $contact_us = 'contact_us';
                         $pagename = basename($_SERVER['PHP_SELF']);
 
                         if(isset($_GET['category']) && $_GET['category']==$cat_id){
                             $category_class = 'active';
                         }else if ($pagename == $regiestration){
                             $regiestration_class = 'active';
-                        }else
+                        }else if ($pagename == $contact_us){
+
+                        }
 //Activation of the link pages
                         echo "<li class='$category_class'><a href='category.php?category={$cat_id}'>{$cat_title}</a></li>";
                     //now all the links can be shown active>>>>
