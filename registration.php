@@ -9,11 +9,13 @@
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
+        $user_role = $_POST['role'];
 
-        if(!empty($username) && !empty($email) && !empty($password)){
+        if(!empty($username) && !empty($email) && !empty($password) && !empty($user_role)){
             $username = mysqli_real_escape_string($connection, $username);
             $email = mysqli_real_escape_string($connection,$email);
             $password = mysqli_real_escape_string($connection,$password);
+            $user_role = mysqli_real_escape_string($connection,$user_role);
 
             $password = password_hash($password, PASSWORD_BCRYPT, array('cost'=> 10));
 
@@ -27,8 +29,8 @@
 //
 //                 $password = crypt($password,$salt);
 
-            $query = "INSERT INTO users (user_name, user_password,user_email) ";
-            $query .="VALUES('{$username}','{$password}','{$email}')";
+            $query = "INSERT INTO users (user_name, user_password,user_email,user_role) ";
+            $query .="VALUES('{$username}','{$password}','{$email}','{$user_role}')";
             $regiestration = mysqli_query($connection, $query);
 
             if(!$regiestration){
@@ -71,6 +73,14 @@
                          <div class="form-group">
                             <label for="password" class="sr-only">Password</label>
                             <input type="password" name="password" id="key" class="form-control" placeholder="Password">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="user_role" class="sr-only">User Role</label>
+                            <select name="role" id="">
+                                <option name="role" value="Subscriber">Subscriber</option>
+                            </select>
                         </div>
                 
                         <input type="submit" name="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Register">
