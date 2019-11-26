@@ -34,6 +34,10 @@ include "includes/db.php";
                 $find_count = mysqli_query($connection, $post_count);
                 $count = mysqli_num_rows($find_count);
 
+                if($count <1){
+                    echo "<h1>All post are draft or there is no published post!</h1>";
+                }else{
+
                 $count = ceil($count/5);
                     $query = "SELECT * FROM posts LIMIT $page1,5";
 
@@ -46,7 +50,7 @@ include "includes/db.php";
                         $post_image = $row['post_image'];
                         $post_content = substr($row['post_content'],0,80);
                         $post_status = $row['post_status'];
-                        if($post_status =='published'){
+
 
 
 
@@ -78,7 +82,8 @@ include "includes/db.php";
 
 
 
-<?php                    } }
+<?php                    }
+                        }
 
 ?>
 
