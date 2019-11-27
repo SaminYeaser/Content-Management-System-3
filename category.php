@@ -19,7 +19,7 @@ include "includes/db.php";
 
             if(isset($_GET['category'])){
                 $selected_post_category = $_GET['category'];
-            }
+
 
             $query = "SELECT * FROM posts WHERE post_catagory_id = $selected_post_category AND post_status = 'published'";
 
@@ -63,7 +63,10 @@ include "includes/db.php";
 
 
 
-            <?php                    } }
+            <?php                    } } }else{
+                header("Location: index.php");
+
+            }
 
             ?>
 
