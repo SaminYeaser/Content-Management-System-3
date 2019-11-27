@@ -26,7 +26,13 @@ include "includes/db.php";
                 die("Query Failed".mysqli_error($connection));
             }
 
-            $query = "SELECT * FROM posts WHERE post_id = $the_selected_post";
+            if(isset($_SESSION['user_role']) && $_SESSION['user_role']=='admin'){
+                $query = "SELECT * FROM posts WHERE post_id = $the_selected_post";
+            }else{
+                $query = "SELECT * FROM posts WHERE post_id = $the_selected_post AND post_status = 'published'";
+            }
+
+
 
             $select_all_from_post = mysqli_query($connection, $query);
             while ($row = mysqli_fetch_assoc($select_all_from_post)){
@@ -41,8 +47,7 @@ include "includes/db.php";
 
 
                 <h1 class="page-header">
-                    Page Heading
-                    <small>Secondary Text</small>
+                    Post
                 </h1>
 
                 <!-- First Blog Post -->
@@ -61,17 +66,6 @@ include "includes/db.php";
 
 
 
-            <?php   }
-
-
-            }else{
-
-                header("Location: header/php");
-
-            }
-
-
-                ?>
 
             <!-- Blog Comments -->
 
@@ -174,7 +168,18 @@ include "includes/db.php";
                 </div>
             </div>
 
-<?php } ?>
+<?php }
+            }
+
+
+            } else {
+
+                header("Location: header/php");
+
+            }
+
+
+            ?>
 
 
 

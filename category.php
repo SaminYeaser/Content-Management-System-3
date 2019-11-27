@@ -21,9 +21,13 @@ include "includes/db.php";
                 $selected_post_category = $_GET['category'];
             }
 
-            $query = "SELECT * FROM posts WHERE post_catagory_id = $selected_post_category";
+            $query = "SELECT * FROM posts WHERE post_catagory_id = $selected_post_category AND post_status = 'published'";
 
             $select_selected_post = mysqli_query($connection, $query);
+
+            if(mysqli_num_rows($select_selected_post)<1){
+                echo "<h1>NO post or all the posts are drafted</h1>";
+            }else{
             while ($row = mysqli_fetch_assoc($select_selected_post)){
                 $post_id = $row['post_id'];
                 $post_title = $row['post_title'];
@@ -59,7 +63,7 @@ include "includes/db.php";
 
 
 
-            <?php                    }
+            <?php                    } }
 
             ?>
 
