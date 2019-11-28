@@ -5,8 +5,11 @@ include "includes/db.php";
 ob_start();
 session_start();
 ?>
-
+<div class="row">
+    <div class="container">
+<div class="col-6">
 <div class="well">
+    <h4></h4>
     <h4>Login</h4>
     <form action="includes/login.php" method="post">
         <div class="form-group">
@@ -18,6 +21,9 @@ session_start();
                     <button class="btn btn-primary" name="login" type="submit">Login</button>
                 </span>
         </div>
+</div>
+</div>
+    </div>
     </form>
     <!-- /.input-group -->
 </div>
