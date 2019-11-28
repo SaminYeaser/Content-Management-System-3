@@ -107,6 +107,7 @@ include "includes/db.php";
 
                     ?>
 
+                    <?php } ?>
 
                     <!-- Comments Form -->
                     <div class="well">
@@ -169,7 +170,7 @@ include "includes/db.php";
                 }
 
             }
-            } else {
+            else {
 
                 header("Location: header/php");
 

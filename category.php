@@ -21,7 +21,14 @@ include "includes/db.php";
                 $selected_post_category = $_GET['category'];
 
 
-            $query = "SELECT * FROM posts WHERE post_catagory_id = $selected_post_category AND post_status = 'published'";
+                if(isset($_SESSION['user_role']) && $_SESSION['user_role']=='Admin'){
+                    $query ="SELECT * FROM posts WHERE post_catagory_id = $selected_post_category" ;
+                }else{
+                    $query = "SELECT * FROM posts WHERE post_catagory_id = $selected_post_category AND post_status = 'published'";
+                }
+
+
+
 
             $select_selected_post = mysqli_query($connection, $query);
 

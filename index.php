@@ -2,15 +2,26 @@
 
 include 'includes/header.php';
 include "includes/db.php";
+ob_start();
+session_start();
 ?>
 
     <!-- Navigation -->
-    <?php include 'includes/navigation.php'?>
+    <?php include 'includes/navigation.php'; ?>
+
 
     <!-- Page Content -->
     <div class="container">
 
         <div class="row">
+
+<!--            --><?php
+//
+//
+//                echo $_SESSION['user_name'];
+//
+//
+//            ?>
 
             <!-- Blog Entries Column -->
             <div class="col-md-8">
@@ -30,7 +41,20 @@ include "includes/db.php";
                     $page1 = ($page * 5) - 5;
                 }
 
-                $post_count = "SELECT * FROM posts WHERE post_status ='published'";
+                if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'Admin'){
+
+                    $post_count = "SELECT * FROM posts";
+
+
+                } else  {
+
+                    $post_count = "SELECT * FROM posts WHERE post_status ='published'";
+
+
+                }
+
+
+
                 $find_count = mysqli_query($connection, $post_count);
                 $count = mysqli_num_rows($find_count);
 
@@ -39,8 +63,21 @@ include "includes/db.php";
                 }else {
 
                     $count = ceil($count / 5);
-                    $query = "SELECT * FROM posts LIMIT $page1,5";
 
+                    if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'Admin'){
+
+                        $query = "SELECT * FROM posts LIMIT $page1,5";
+
+
+                    } else {
+
+                        $query = "SELECT * FROM posts WHERE post_status = 'published' LIMIT $page1,5";
+
+
+                    }
+
+
+                   // $query = "SELECT * FROM posts LIMIT $page1,5";
                     $select_all_from_post = mysqli_query($connection, $query);
                     while ($row = mysqli_fetch_assoc($select_all_from_post)) {
                         $post_id = $row['post_id'];
@@ -61,6 +98,8 @@ include "includes/db.php";
                                 Page Heading
                                 <small>Secondary Text</small>
                             </h1>
+
+
 
                             <!-- First Blog Post -->
                             <h2>
@@ -83,8 +122,7 @@ include "includes/db.php";
                             <hr>
 
 
-                        <?php }
-                }
+                        <?php } }
 
 ?>
 
