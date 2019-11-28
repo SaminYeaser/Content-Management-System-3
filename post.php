@@ -2,6 +2,12 @@
 
 include 'includes/header.php';
 include "includes/db.php";
+ob_start();
+session_start();
+if(!isset($_SESSION['user_role'])){
+    header('Location: home.php');
+
+}
 ?>
 
     <!-- Navigation -->
