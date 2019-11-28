@@ -9,7 +9,7 @@ session_start();
     <div class="container">
 <div class="col-6">
 <div class="well">
-    <h4></h4>
+    <h4 class="text-center">You have to Login or Register first </h4>
     <h4>Login</h4>
     <form action="includes/login.php" method="post">
         <div class="form-group">
@@ -23,9 +23,13 @@ session_start();
         </div>
 </div>
 </div>
+        <h5>Don't have Account?</h5>
+        <a href="registration.php">Register</a>
     </div>
+
     </form>
     <!-- /.input-group -->
+
 </div>
 
 <?php
