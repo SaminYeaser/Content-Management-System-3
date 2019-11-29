@@ -78,13 +78,16 @@
 
 <?php
 
-if(isset($_GET['change_to_admin'])){
-    $the_user_id = $_GET['change_to_admin'];
-    $query = "UPDATE users SET user_role = 'Admin' WHERE user_id = $the_user_id";
-    $user_role_update = mysqli_query($connection, $query);
-    header("Location: users.php");
+if(isset($_GET['change_to_admin'])) {
+    if (isset($_SESSION['user_role'])) {
+        if ($_SESSION['user_role'] == 'Admin') {
+            $the_user_id = $_GET['change_to_admin'];
+            $query = "UPDATE users SET user_role = 'Admin' WHERE user_id = $the_user_id";
+            $user_role_update = mysqli_query($connection, $query);
+            header("Location: users.php");
+        }
+    }
 }
-
 ?>
 <!---->
 <!---->
