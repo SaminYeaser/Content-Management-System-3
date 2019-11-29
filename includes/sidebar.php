@@ -29,6 +29,7 @@
                 <h4>Logged in as <?php echo $_SESSION['user_name'] ?> </h4>
                 <h5><?php echo $_SESSION['user_role']?></h5>
 
+                <a href="includes/logout.php" class="btn btn-primary">Logout</a>
             <?php }else{ ?>
 
         <h4>Login</h4>
