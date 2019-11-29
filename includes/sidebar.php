@@ -22,6 +22,15 @@
 
 
     <div class="well">
+        <?php
+
+            if(isset($_SESSION['user_name'])){ ?>
+
+                <h4>Logged in as <?php echo $_SESSION['user_name'] ?> </h4>
+                <h5><?php echo $_SESSION['user_role']?></h5>
+
+            <?php }else{ ?>
+
         <h4>Login</h4>
         <form action="includes/login.php" method="post">
             <div class="form-group">
@@ -35,7 +44,12 @@
             </div>
         </form>
         <!-- /.input-group -->
+
+
+            <?php } ?>
+
     </div>
+
     
     
     
