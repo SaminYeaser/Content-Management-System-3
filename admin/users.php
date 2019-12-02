@@ -1,7 +1,19 @@
 <?php ob_start();?>
+<?php session_start();?>
 <?php include 'includess/header.php';?>
 
     <div id="wrapper">
+
+    <?php
+
+        if (isset($_SESSION['user_role'])){
+            if(!$_SESSION['user_role']=='Admin'){
+                header('Location: index.php');
+            }
+        }
+
+?>
+
 
     <!-- Navigation -->
     <?php include 'includess/navigation.php';?>
