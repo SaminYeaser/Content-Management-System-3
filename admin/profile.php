@@ -72,8 +72,8 @@ query_check($update);
                 <div class="col-lg-12 col-xs-12">
 
                     <h1 class="page-header">
-                        Welcome to Admin
-                        <small>Author</small>
+                        Welcome to your profile
+                        <small><?php echo $_SESSION['user_name']?></small>
                     </h1>
 
 
