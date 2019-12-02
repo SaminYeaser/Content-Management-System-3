@@ -7,7 +7,7 @@
     <?php
 
         if (isset($_SESSION['user_role'])){
-            if(!$_SESSION['user_role']=='Admin'){
+            if($_SESSION['user_role']=='Subscriber'){
                 header('Location: index.php');
             }
         }
@@ -28,7 +28,7 @@
 
                     <h1 class="page-header">
                         Welcome to Admin
-                        <small>Author</small>
+                        <small><?php echo $_SESSION['user_name']?></small>
                     </h1>
                     <?php
 
