@@ -2,6 +2,14 @@
 <?php //session_start();?>
 <?php include 'includess/header.php';?>
 
+        <?php
+
+            if(isset($_SESSION['user_role'])){
+
+            }
+
+?>
+
     <div id="wrapper">
 
     <!-- Navigation -->
