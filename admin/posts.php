@@ -1,5 +1,5 @@
 <?php ob_start();?>
-<?php session_start();?>
+<?php //session_start();?>
 <?php include 'includess/header.php';?>
 
     <div id="wrapper">
