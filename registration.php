@@ -12,7 +12,7 @@
         $user_role = $_POST['role'];
 
 
-        if(user_exist()){
+        if(user_exist($username)){
 
             echo "This username existed";
 
