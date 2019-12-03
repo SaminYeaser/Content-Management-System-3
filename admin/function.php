@@ -103,4 +103,23 @@ function user_exist($user_name){
         return false;
     }
 }
+
+function user_emai_exist($user_mail){
+
+    global $connection;
+
+    $query = "SELECT user_email FROM users WHERE user_email ='$user_mail'";
+    $select_from_user = mysqli_query($connection, $query);
+
+
+//    while ($row = mysqli_fetch_array($select_from_user)){
+//        $user_name = $row['user_name'];
+//    }
+
+    if (mysqli_num_rows($select_from_user) > 0) {
+        return true;
+    }else{
+        return false;
+    }
+}
 ?>
