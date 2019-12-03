@@ -93,11 +93,11 @@ function user_exist($user_name){
     $select_from_user = mysqli_query($connection, $query);
 
 
-    while ($row = mysqli_fetch_array($select_from_user)){
-        $user_name = $row['user_name'];
-    }
+//    while ($row = mysqli_fetch_array($select_from_user)){
+//        $user_name = $row['user_name'];
+//    }
 
-    if (mysqli_num_rows($select_from_user)){
+    if (mysqli_num_rows($select_from_user) > 0) {
         return true;
     }else{
         return false;
