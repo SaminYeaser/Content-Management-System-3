@@ -1,5 +1,7 @@
+<?php //include "admin/function.php"?>
 <?php  include "includes/db.php"; ?>
  <?php  include "includes/header.php"; ?>
+
 
 
 
@@ -14,7 +16,7 @@
 
         if(user_exist($username)){
 
-            echo "This username existed";
+            $message = "This username existed";
 
         }
 
@@ -44,7 +46,7 @@
             if(!$regiestration){
                 die('Query Failed'. mysqli_error($connection));
             }
-            $message = "Completed Registration!";
+//            $message = "Completed Registration!";
         }else{
             $message = "From Can not be Empty!";
     }
