@@ -84,4 +84,22 @@ function query_check($result)
         die("Query Failed." . mysqli_error($connection));
     }
 }
+
+function user_exist(){
+
+    global $connection;
+
+    $query = "SELECT user_name FROM users";
+    $select_from_user = mysqli_query($connection, $query);
+
+    while ($row = mysqli_fetch_array($select_from_user)){
+        $user_name = $row['user_name'];
+    }
+
+    if (mysqli_num_rows($select_from_user)){
+        return true;
+    }else{
+        return false;
+    }
+}
 ?>

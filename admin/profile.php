@@ -105,8 +105,14 @@ query_check($update);
                                 <option value="<?php echo $user_value?>"><?php echo $user_role?></option>
 
                                 <?php
-                                if($user_role == 'Admin'){
-                                    echo "<option value=\"Admin\">Admin</option>";
+
+                                if($user_role == 'Admin') {
+
+                                    if ($user_role == 'Admin') {
+                                        echo "<option value=\"Admin\">Admin</option>";
+                                    } else {
+                                        echo "<option value=\"Subscriber\">Subscriber</option>";
+                                    }
                                 }else{
                                     echo "<option value=\"Subscriber\">Subscriber</option>";
                                 }
