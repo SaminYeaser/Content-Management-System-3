@@ -14,11 +14,11 @@
         $user_role = $_POST['role'];
 
 
-        if(user_exist($username)){
-
-            $message = "This username existed";
-
-        }
+//        if(user_exist($username)){
+//
+//            $message = "User Registered!";
+//
+//        }
 
 
         if(!empty($username) && !empty($email) && !empty($password) && !empty($user_role)){
@@ -46,7 +46,7 @@
             if(!$regiestration){
                 die('Query Failed'. mysqli_error($connection));
             }
-//            $message = "Completed Registration!";
+            $message = "Completed Registration!";
         }else{
             $message = "From Can not be Empty!";
     }
