@@ -85,12 +85,13 @@ function query_check($result)
     }
 }
 
-function user_exist(){
+function user_exist($user_name){
 
     global $connection;
 
-    $query = "SELECT user_name FROM users";
+    $query = "SELECT user_name FROM users WHERE user_name ='$user_name'";
     $select_from_user = mysqli_query($connection, $query);
+
 
     while ($row = mysqli_fetch_array($select_from_user)){
         $user_name = $row['user_name'];

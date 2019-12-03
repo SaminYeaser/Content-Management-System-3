@@ -11,6 +11,14 @@
         $password = $_POST['password'];
         $user_role = $_POST['role'];
 
+
+        if(user_exist()){
+
+            echo "This username existed";
+
+        }
+
+
         if(!empty($username) && !empty($email) && !empty($password) && !empty($user_role)){
             $username = mysqli_real_escape_string($connection, $username);
             $email = mysqli_real_escape_string($connection,$email);
