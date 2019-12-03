@@ -1,6 +1,5 @@
 <?php
 
-include 'admin/function.php';
 //    $db['db_user'] = 'localhost';
 //    $db['db_user'] = 'root';
 //    $db['db_password'] = '';
