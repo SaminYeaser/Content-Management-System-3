@@ -73,7 +73,12 @@ if(!isset($_SESSION['user_role'])){
                     <p><?php echo $post_content ?></p>
                     <hr>
 
-                    //adding like button
+<!--                    adding like button-->
+
+                    <div class="row">
+                        <p class="pull-right"><a href="">Like</a></p>
+                    </div>
+
 
                     <!-- Blog Comments -->
 
