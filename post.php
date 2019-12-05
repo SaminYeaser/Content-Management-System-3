@@ -83,6 +83,7 @@ if(!isset($_SESSION['user_role'])){
                         <p class="pull-right">Likes: 10</p>
                     </div>
 
+                    <div class="clearfix"></div>
                     <!-- Blog Comments -->
 
                     <?php
