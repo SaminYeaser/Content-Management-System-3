@@ -76,7 +76,7 @@ if(!isset($_SESSION['user_role'])){
 <!--                    adding like button-->
 
                     <div class="row">
-                        <p class="pull-right"><a href="">Like</a></p>
+                        <p class="pull-right"><a href=""><span class="glyphicon glyphicon-thumbs-up"></span>Like</a></p>
                     </div>
 
                     <div class="row">
@@ -214,3 +214,8 @@ if(!isset($_SESSION['user_role'])){
 
 include 'includes/footer.php';
 ?>
+
+        <script>
+
+
+        </script>
