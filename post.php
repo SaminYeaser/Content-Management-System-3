@@ -79,6 +79,9 @@ if(!isset($_SESSION['user_role'])){
                         <p class="pull-right"><a href="">Like</a></p>
                     </div>
 
+                    <div class="row">
+                        <p class="pull-right">Likes: 10</p>
+                    </div>
 
                     <!-- Blog Comments -->
 
