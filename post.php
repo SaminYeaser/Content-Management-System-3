@@ -13,6 +13,31 @@ if(!isset($_SESSION['user_role'])){
     <!-- Navigation -->
 <?php include 'includes/navigation.php'?>
 
+<?php
+
+    if (isset($_POST['liked'])){
+
+//        echo "<h1>It works</h1>";
+
+        $post_id = $_POST['post_id'];
+
+        $searchPostQuery = "SELECT * FROM posts WHERE post_id = $post_id";
+        $postResult = mysqli_query($connection, $searchPostQuery);
+        $post = mysqli_fetch_array($postResult);
+        $likes = $post['likes'];
+
+        if(mysqli_num_rows($postResult)>=1){
+            echo $post['post_id'];
+        }
+
+        mysqli_query($connection, "UPDATE posts SET likes=$likes+1 WHERE post_id = $post_id");
+
+
+
+    }
+
+?>
+
     <!-- Page Content -->
     <div class="container">
 
@@ -76,7 +101,7 @@ if(!isset($_SESSION['user_role'])){
 <!--                    adding like button-->
 
                     <div class="row">
-                        <p class="pull-right"><a href=""><span class="glyphicon glyphicon-thumbs-up"></span>Like</a></p>
+                        <p class="pull-right"><a class="like" href="#"><span class="glyphicon glyphicon-thumbs-up"></span>Like</a></p>
                     </div>
 
                     <div class="row">
@@ -217,5 +242,25 @@ include 'includes/footer.php';
 
         <script>
 
+            // function $(document) {
+            //
+            // }
+
+            $(document).ready(function () {
+
+                var post_id = <?php echo $the_selected_post;?>;
+                    var user_id = 57;
+                $('.like').click(function () {
+                    $.ajax({
+                       url: "post.php?p_id=<?php echo $the_selected_post;?>",
+                       type : 'post',
+                       data: {
+                           'liked': 1,
+                           'post_id': post_id,
+                           'user_id': user_id
+                       }
+                    });
+                });
+            });
 
         </script>
