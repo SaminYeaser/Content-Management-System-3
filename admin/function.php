@@ -56,6 +56,10 @@ function userLikedPost($post_id =''){
     return mysqli_num_rows($result) >=1 ? true : false;
 }
 
+function getPostLike($post_id){
+    $result = query("SELECT * FROM likes WHERE post_id= $post_id");
+    echo mysqli_num_rows($result);
+}
 
 
 function submitForm(){
