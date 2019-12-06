@@ -26,6 +26,36 @@ function users_online(){
 
 }
 
+function query($query){
+    global $connection;
+    return mysqli_query($connection, $query);
+}
+function isLoggedIn(){
+    if(isset($_SESSION['user_role'])){
+        return true;
+    }else{
+        return false;
+    }
+
+}
+
+function loggedInUserID(){
+    if(isLoggedIn()){
+        $result = query("SELECT * FROM users WHERE user_name = '". $_SESSION['user_name']."'");
+        $user = mysqli_fetch_array($result);
+
+        return mysqli_num_rows($result)>=1 ? $user['user_id'] : false;
+
+
+    }
+    return false;
+}
+
+function userLikedPost($post_id =''){
+    $result = query("SELECT * FROM likes WHERE user_id =".loggedInUserID()." AND post_id = {$post_id}");
+    return mysqli_num_rows($result) >=1 ? true : false;
+}
+
 
 
 function submitForm(){
