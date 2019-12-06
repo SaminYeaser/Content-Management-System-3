@@ -19,6 +19,7 @@ if(!isset($_SESSION['user_role'])){
 
 //        echo "<h1>It works</h1>";
 
+        //likes query added
         $post_id = $_POST['post_id'];
 
         $searchPostQuery = "SELECT * FROM posts WHERE post_id = $post_id";
@@ -30,9 +31,10 @@ if(!isset($_SESSION['user_role'])){
             echo $post['post_id'];
         }
 
+        //update post with likes
         mysqli_query($connection, "UPDATE posts SET likes=$likes+1 WHERE post_id = $post_id");
 
-
+        //create likes for the posts
 
     }
 
